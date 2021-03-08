@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { AddProductToCart } from 'components/AddProductToCart/AddProductToCart';
 import { CartItem } from 'models/CartItem';
-import { formatAsPrice } from 'utils/utils';
+import { formatAsPrice } from 'utils/format-as-price';
+import { calculateTotalPrice } from 'utils/total-price';
 
 const useStyles = makeStyles((theme) => ({
     listItem: {
@@ -28,10 +29,7 @@ type CartItemsProps = {
 export default function CartItems({ items, isEditable }: CartItemsProps) {
     const classes = useStyles();
 
-    const totalPrice = useMemo(
-        () => items.reduce((total, item) => (item.count * item.product.price + total), 0),
-        [items],
-    );
+    const totalPrice = useMemo(() => calculateTotalPrice(items), [items]);
 
     return (
         <React.Fragment>

@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { AddProductToCart } from 'components/AddProductToCart/AddProductToCart';
 import { Product } from 'models/Product';
-import { formatAsPrice } from 'utils/utils';
+import { formatAsPrice } from 'utils/format-as-price';
 
 // import axios from 'axios';
 // import API_PATHS from "constants/apiPaths";

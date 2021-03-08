@@ -12,7 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import axios from 'axios';
 import { Product } from 'models/Product';
-import { formatAsPrice } from 'utils/utils';
+import { formatAsPrice } from 'utils/format-as-price';
 
 export default function ProductsTable() {
     const [products, setProducts] = useState<Product[]>([]);
